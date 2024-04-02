@@ -1,4 +1,4 @@
-package Computational.math;
+package Computational.math.Functions;
 
 import java.util.function.Function;
 
@@ -65,5 +65,11 @@ public class Functions {
                 System.out.println("Такой функции нет");
                 break;
         }
+    }
+    public static void printAllFunctions(){
+        System.out.println("1. x^3 - x  + 4");
+        System.out.println("2. x^3 + 2.28x^2 - 1.934*x-3.907");
+        System.out.println("3. sin(x) + 0.1");
+
     }
 }

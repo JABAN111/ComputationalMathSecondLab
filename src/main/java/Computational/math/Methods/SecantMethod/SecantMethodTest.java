@@ -1,8 +1,7 @@
 package Computational.math.Methods.SecantMethod;
 
-import Computational.math.Functions;
+import Computational.math.Functions.Functions;
 import Computational.math.Methods.AbstractMethod;
-import Computational.math.Methods.SecantMethod.SecantMethod;
 import org.junit.Test;
 
 import java.util.function.Function;

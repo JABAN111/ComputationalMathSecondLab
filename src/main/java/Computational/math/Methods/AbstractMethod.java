@@ -1,6 +1,5 @@
 package Computational.math.Methods;
 
-import Computational.math.Functions;
 import java.util.function.Function;
 
 public abstract class AbstractMethod {

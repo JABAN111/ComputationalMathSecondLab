@@ -1,13 +1,12 @@
 package Computational.math.Methods.SecantMethod;
 
-import Computational.math.Functions;
+import Computational.math.Functions.Functions;
 import Computational.math.Methods.AbstractMethod;
 import org.netirc.library.jtables.JTablesBuilder;
 import org.netirc.library.jtables.exception.MalformedTableException;
 import org.netirc.library.jtables.table.MonospaceTable;
 
 import java.util.function.BinaryOperator;
-import java.util.function.Function;
 
 public class SecantMethod extends AbstractMethod {
     private double a;

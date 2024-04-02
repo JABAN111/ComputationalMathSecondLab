@@ -1,6 +1,6 @@
 package Computational.math.Methods.SimpleIteration;
 
-import Computational.math.Functions;
+import Computational.math.Functions.Functions;
 import Computational.math.Methods.AbstractMethod;
 import org.netirc.library.jtables.JTablesBuilder;
 import org.netirc.library.jtables.exception.MalformedTableException;

@@ -1,6 +1,6 @@
 package Computational.math.Methods.HalfDivision;
 
-import Computational.math.Functions;
+import Computational.math.Functions.Functions;
 import Computational.math.Methods.AbstractMethod;
 import org.netirc.library.jtables.JTablesBuilder;
 import org.netirc.library.jtables.exception.MalformedTableException;
@@ -45,7 +45,7 @@ public class HalfDivision extends AbstractMethod {
                 }
                 iterationsCounter++;
                 builder.row("" + iterationsCounter, String.format("%.3f", a), String.format("%.3f", b), String.format("%.3f", x), String.format("%.3f", fa), String.format("%.3f", function.getValueOfChosenFunction(b)), String.format("%.3f", fx), Math.abs(a - b) + "");
-                if (iterationsCounter > 50){
+                if (iterationsCounter > 300){
                     //fixme заменить на что-то более человеческое:D
                     System.err.println("Подозрительно дохрина итераций");
                     return;
