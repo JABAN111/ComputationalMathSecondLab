@@ -50,4 +50,20 @@ public class Functions {
             default -> -1d;
         };
     }
+    public void printFunction(){
+        switch (this.chosenFunctionNumber){
+            case 1:
+                System.out.println("x^3 - x  + 4");
+                break;
+            case 2:
+                System.out.println("x^3 + 2.28x^2 - 1.934*x-3.907");
+                break;
+            case 3:
+                System.out.println("sin(x) + 0.1");
+                break;
+            default:
+                System.out.println("Такой функции нет");
+                break;
+        }
+    }
 }

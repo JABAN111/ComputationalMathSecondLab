@@ -28,6 +28,8 @@ public class HalfDivision extends AbstractMethod {
     public void solve() {
         try {
             super.printMethodName();
+            System.out.println("Для функции: ");function.printFunction();
+
             builder.columns("№","a","b","x","f(a)","f(b)","f(x)","|a-b|");
             double x;
             int iterationsCounter = 0;

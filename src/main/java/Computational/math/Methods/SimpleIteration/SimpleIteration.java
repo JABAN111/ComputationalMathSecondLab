@@ -27,6 +27,8 @@ public class SimpleIteration extends AbstractMethod {
     public void solve() {
         try {
             super.printMethodName();
+            System.out.println("Для функции: ");function.printFunction();
+
 
             builder.columns("№", "x", "x_next", "fi", "F(x_next)", "|a-b|");
 
