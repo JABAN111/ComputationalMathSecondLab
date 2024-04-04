@@ -2,22 +2,18 @@ package Computational.math.GraphicPart.MainComponents;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Line2D;
 
 public class Axes extends JComponent {
-    private final int hatchWidth = 20 / 2;
-    private final int hatchGap = 56;
-    private int w = getWidth();
-    private int h = getHeight();
-    private static final int NUM_TICKS_X = 10;
+    public static final int NUM_TICKS_X = 10;
     private static final int NUM_TICKS_Y = 10;
     private static final int TICK_LENGTH = 5;
-    private static final int SPACE = 5;
     public Axes(){
         setPreferredSize(new Dimension(400,400));
     }
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        Graphics2D gr = (Graphics2D) g;
 
         // Найти центр экрана
         int centerX = getWidth() / 2;
@@ -29,13 +25,10 @@ public class Axes extends JComponent {
         g.drawLine(centerX, 0, centerX, getHeight()); // Ось ординат
         g.drawString("x", centerX + (int) (getWidth()/2 - getWidth()/2 * 0.01), centerY - (int)(getHeight()*0.01));
 
-//        g.drawLine(centerX + SPACE + TICK_LENGTH/2,centerY - SPACE,centerX + SPACE - TICK_LENGTH/2, centerX - SPACE);
-//        g.drawString("СТАРТ",centerX + SPACE + TICK_LENGTH,centerY - SPACE);
-//        g.drawString("Финиш", centerX + SPACE, centerX - SPACE);
+
 
         int xTickSpacing = getWidth() / NUM_TICKS_X;
 
-//        int xTick = centerX + 2 * xTickSpacing;
         //positive ticks
         for (int i = 0; i < NUM_TICKS_X/2; i++){
             int xTick = centerX+i*xTickSpacing;
