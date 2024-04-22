@@ -27,7 +27,8 @@ public class SimpleIteration extends AbstractMethod {
     public void solve() {
         try {
             super.printMethodName();
-            System.out.println("Для функции: ");function.printFunction();
+            System.out.println("Для функции: ");
+            function.printFunction();
 
 
             builder.columns("№", "x", "x_next", "fi", "F(x_next)", "|a-b|");
@@ -44,29 +45,24 @@ public class SimpleIteration extends AbstractMethod {
             }
             System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tУсловие сходимости выполнено!");
             xi = a;
-                xNext = methodLambda * function.getValueOfChosenFunction(xi) + xi;
-                do {
-                    fi = methodLambda * function.getValueOfChosenFunction(xNext) + xNext;
-                    if (iter != 0) {
-                        xi = xNext;
-                        xNext = fi;
-                    }
-                    fNext = function.getValueOfChosenFunction(xNext);
-                    iter++;
-                    builder.row(iter+"", String.format("%.3f",xi), String.format("%.3f",xNext), String.format("%.3f",fi), String.format("%.3f",fNext), String.format("%.3f",Math.abs(xNext - xi)));
-                    if (iter > 50) {
-                        System.err.println("Превысили попытки");
-                        System.exit(-1);
-                    }
-                } while (Math.abs(xNext - xi) > epsilon);
-
+            xNext = methodLambda * function.getValueOfChosenFunction(xi) + xi;
+            do {
+                fi = methodLambda * function.getValueOfChosenFunction(xNext) + xNext;
+                if (iter != 0) {
+                    xi = xNext;
+                    xNext = fi;
+                }
+                fNext = function.getValueOfChosenFunction(xNext);
+                iter++;
+                builder.row(iter + "", String.format("%.3f", xi), String.format("%.3f", xNext), String.format("%.3f", fi), String.format("%.3f", fNext), String.format("%.3f", Math.abs(xNext - xi)));
+                if (iter > 300) {
+                    System.err.println("Нет корней");
+                }
+            } while (Math.abs(xNext - xi) > epsilon);
             table = builder.getTable();
             System.out.println(table.toStringHorizontal());
-        }catch (MalformedTableException e){
+        } catch (MalformedTableException e) {
             System.err.println(e.getMessage());
         }
-
     }
-
-
 }

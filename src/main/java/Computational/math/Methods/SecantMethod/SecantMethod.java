@@ -44,17 +44,15 @@ public class SecantMethod extends AbstractMethod {
                     xPrevious = xCurrent;
                     xCurrent = xNext;
                 }
-
                 xNext = calculateNextX.apply(xCurrent,xPrevious);
                 fNext = functions.getValueOfChosenFunction(xNext);
                 if(iteration > 200){
-                    System.err.println("Слишком дохрена...");
+                    System.err.println("Нет корней на данном промежутке");
                     break;
                 }
                 iteration++;
-
                 builder.row(iteration+"",String.format("%.3f",xPrevious),String.format("%.3f",xCurrent),String.format("%.3f",xNext),String.format("%.3f",fNext),String.format("%.3f",Math.abs(xNext-xCurrent)));
-            }while( Math.abs(xNext - xCurrent) > epsilon);
+            }while(Math.abs(xNext - xCurrent) > epsilon);
 
             table = builder.getTable();
             System.out.println(table.toStringHorizontal());

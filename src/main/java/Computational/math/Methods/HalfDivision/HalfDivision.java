@@ -34,7 +34,6 @@ public class HalfDivision extends AbstractMethod {
             double x;
             int iterationsCounter = 0;
             do {
-
                 x = (a + b) / 2;
                 double fa = function.getValueOfChosenFunction(a);
                 double fx = function.getValueOfChosenFunction(x);
@@ -46,8 +45,7 @@ public class HalfDivision extends AbstractMethod {
                 iterationsCounter++;
                 builder.row("" + iterationsCounter, String.format("%.3f", a), String.format("%.3f", b), String.format("%.3f", x), String.format("%.3f", fa), String.format("%.3f", function.getValueOfChosenFunction(b)), String.format("%.3f", fx), Math.abs(a - b) + "");
                 if (iterationsCounter > 300){
-                    //fixme заменить на что-то более человеческое:D
-                    System.err.println("Подозрительно дохрина итераций");
+                    System.err.println("На данном отрезке нет корней");
                     return;
             }
             } while (Math.abs(a - b) > epsilon || Math.abs(function.getValueOfChosenFunction(x)) > epsilon);
